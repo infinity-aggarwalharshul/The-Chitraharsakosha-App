@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elysian Health | AI-Powered Longevity & Healthspan</title>
+    <meta
+      name="description"
+      content="Elysian Health combines AI-driven diagnostics and cellular science to create personalized plans for extending your healthspan. Unlock your biological potential."
+    />
+    <meta
+      name="keywords"
+      content="Longevity, Healthspan, Bio-hacking, AI Health, Personalized Medicine, Cellular Reprogramming, Genetic Analysis, Biological Mastery"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4338CA", // A deep, trustworthy indigo
+              "primary-hover": "#3730A3",
+              secondary: "#1F2937",
+              light: "#F9FAFB",
+              dark: "#111827",
+              "dark-secondary": "#1F2937",
+              accent: "#10B981", // Emerald for health/success
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+              "slide-in-up": "slideInUp 0.5s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+              slideInUp: {
+                "0%": { transform: "translateY(20px)", opacity: 0 },
+                "100%": { transform: "translateY(0)", opacity: 1 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-effect {
+        background: rgba(17, 24, 39, 0.5);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glowing-border-primary {
+        box-shadow: 0 0 15px rgba(67, 56, 202, 0.6);
+      }
+      .nav-link.active {
+        color: #4338ca;
+      }
+    </style>
+  </head>
+  <body class="bg-dark text-light">
+    <!-- App Container -->
+    <div id="app" class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="sticky top-0 z-50 glass-effect">
+        <nav
+          class="container mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <a href="#home" class="flex items-center space-x-2">
+            <i data-lucide="heart-pulse" class="w-8 h-8 text-primary"></i>
+            <span class="text-xl font-bold text-white">Elysian Health</span>
+          </a>
+          <div
+            class="hidden md:flex items-center space-x-6 text-gray-300"
+            id="main-nav"
+          >
+            <a
+              href="#home"
+              class="nav-link hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="nav-link hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="#ai-advisor"
+              class="nav-link hover:text-primary transition-colors"
+              >AI Advisor</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link hover:text-primary transition-colors"
+              >Pricing</a
+            >
+            <a
+              href="#blogs"
+              class="nav-link hover:text-primary transition-colors"
+              >Blogs</a
+            >
+          </div>
+          <div id="auth-container">
+            <!-- Auth state rendered here -->
+          </div>
+          <button id="mobile-menu-button" class="md:hidden text-white">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-secondary">
+          <a href="#home" class="block py-2 px-4 text-sm hover:bg-secondary"
+            >Home</a
+          >
+          <a href="#services" class="block py-2 px-4 text-sm hover:bg-secondary"
+            >Services</a
+          >
+          <a
+            href="#ai-advisor"
+            class="block py-2 px-4 text-sm hover:bg-secondary"
+            >AI Advisor</a
+          >
+          <a href="#pricing" class="block py-2 px-4 text-sm hover:bg-secondary"
+            >Pricing</a
+          >
+          <a href="#blogs" class="block py-2 px-4 text-sm hover:bg-secondary"
+            >Blogs</a
+          >
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-grow">
+        <!-- Home/Hero Section -->
+        <section
+          id="home"
+          class="py-24 md:py-32 bg-cover bg-center"
+          style="
+            background-image: linear-gradient(
+                rgba(17, 24, 39, 0.9),
+                rgba(17, 24, 39, 1)
+              ),
+              url('https://placehold.co/1920x1080/111827/4338CA?text=Elysian');
+          "
+        >
+          <div class="container mx-auto px-6 text-center">
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white leading-tight animate-fade-in"
+            >
+              Engineer Your Longevity.
+            </h1>
+            <p
+              class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-slide-in-up"
+              style="animation-delay: 0.2s"
+            >
+              We merge AI-driven diagnostics with cutting-edge cellular science
+              to create your personalized blueprint for a longer, healthier
+              life.
+            </p>
+            <a
+              href="#ai-advisor"
+              class="mt-8 inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-hover transition-transform transform hover:scale-105 animate-slide-in-up"
+              style="animation-delay: 0.4s"
+              >Begin Your Journey</a
+            >
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+          <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
+              Our Foundational Pillars
+            </h2>
+            <p class="mt-2 text-gray-400 text-center max-w-2xl mx-auto">
+              Leveraging breakthrough science to provide unparalleled insights
+              into your health.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="bg-secondary rounded-lg p-8 text-center border border-gray-700 hover:border-primary transition-all transform hover:-translate-y-2"
+              >
+                <i data-lucide="dna" class="w-12 h-12 text-primary mx-auto"></i>
+                <h3 class="mt-4 text-xl font-semibold text-white">
+                  Whole Genome Sequencing
+                </h3>
+                <p class="mt-2 text-gray-400">
+                  Deep dive into your genetic makeup to identify risks and
+                  opportunities for optimized health and longevity.
+                </p>
+              </div>
+              <div
+                class="bg-secondary rounded-lg p-8 text-center border border-gray-700 hover:border-primary transition-all transform hover:-translate-y-2"
+              >
+                <i
+                  data-lucide="test-tube-2"
+                  class="w-12 h-12 text-primary mx-auto"
+                ></i>
+                <h3 class="mt-4 text-xl font-semibold text-white">
+                  Advanced Liquid Biopsy
+                </h3>
+                <p class="mt-2 text-gray-400">
+                  Early detection of circulating cancer cells and other
+                  biomarkers to proactively manage your health risks.
+                </p>
+              </div>
+              <div
+                class="bg-secondary rounded-lg p-8 text-center border border-gray-700 hover:border-primary transition-all transform hover:-translate-y-2"
+              >
+                <i
+                  data-lucide="brain-circuit"
+                  class="w-12 h-12 text-primary mx-auto"
+                ></i>
+                <h3 class="mt-4 text-xl font-semibold text-white">
+                  AI-Personalized Plans
+                </h3>
+                <p class="mt-2 text-gray-400">
+                  Our AI analyzes your unique biological data to create a
+                  dynamic, actionable longevity roadmap.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- AI Advisor Section -->
+        <section id="ai-advisor" class="py-20 bg-secondary">
+          <div class="container mx-auto px-6">
+            <div
+              id="app-content"
+              class="bg-dark rounded-lg p-6 md:p-8 glowing-border-primary min-h-[70vh] flex flex-col"
+            >
+              <!-- Content will be dynamically rendered here based on auth state -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20">
+          <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">
+              Choose Your Path to Longevity
+            </h2>
+            <p class="mt-2 text-gray-400">
+              Packages designed for every stage of your health journey.
+            </p>
+            <div class="mt-8 flex justify-center items-center space-x-4">
+              <span id="usd-label" class="font-semibold text-primary"
+                >USD ($)</span
+              >
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="currency-toggle"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-14 h-7 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"
+                ></div>
+              </label>
+              <span id="inr-label" class="font-semibold text-gray-400"
+                >INR (₹)</span
+              >
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-secondary rounded-lg p-8 border border-gray-700">
+                <h3 class="text-2xl font-semibold text-white">
+                  Essential Diagnostics
+                </h3>
+                <div class="mt-6">
+                  <span
+                    class="text-4xl font-bold text-white"
+                    data-price-usd="1,500"
+                    data-price-inr="1,25,000"
+                    >$1,500</span
+                  >
+                  <span class="text-gray-400">/ one-time</span>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-300 text-left">
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >AI Health Advisor Access
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Advanced Liquid Biopsy
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Basic Genetic Marker Analysis
+                  </li>
+                </ul>
+                <button
+                  class="mt-8 w-full border border-primary text-primary font-semibold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
+                >
+                  Select Plan
+                </button>
+              </div>
+              <div
+                class="bg-secondary rounded-lg p-8 border-2 border-primary glowing-border-primary"
+              >
+                <h3 class="text-2xl font-semibold text-primary">
+                  Advanced Blueprint
+                </h3>
+                <div class="mt-6">
+                  <span
+                    class="text-4xl font-bold text-white"
+                    data-price-usd="5,000"
+                    data-price-inr="4,15,000"
+                    >$5,000</span
+                  >
+                  <span class="text-gray-400">/ one-time</span>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-300 text-left">
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >All Essential Features
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Whole Genome Sequencing
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Personalized Longevity Plan
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Quarterly Health Reviews
+                  </li>
+                </ul>
+                <button
+                  class="mt-8 w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary-hover"
+                >
+                  Select Plan
+                </button>
+              </div>
+              <div class="bg-secondary rounded-lg p-8 border border-gray-700">
+                <h3 class="text-2xl font-semibold text-white">
+                  Premier Immortality
+                </h3>
+                <div class="mt-6">
+                  <span class="text-4xl font-bold text-white">Contact Us</span>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-300 text-left">
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >All Advanced Features
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Cellular Reprogramming R&D Access
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Concierge Medical Team
+                  </li>
+                  <li class="flex items-center">
+                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    >Annual Retreats
+                  </li>
+                </ul>
+                <button
+                  class="mt-8 w-full border border-primary text-primary font-semibold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
+                >
+                  Inquire
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blogs Section -->
+        <section id="blogs" class="py-20 bg-secondary">
+          <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
+              The Elysian Archives
+            </h2>
+            <p class="mt-2 text-gray-400 text-center">
+              Insights from the forefront of longevity science.
+            </p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-dark rounded-lg overflow-hidden">
+                <img
+                  src="https://placehold.co/600x400/111827/FFFFFF?text=Cellular+Science"
+                  alt="Blog post image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-white">
+                    The Promise of Cellular Reprogramming
+                  </h3>
+                  <p class="mt-2 text-gray-400">
+                    Can we reverse aging? A look into the Nobel Prize-winning
+                    science behind turning back our biological clocks.
+                  </p>
+                  <a
+                    href="#"
+                    class="mt-4 inline-block text-primary hover:underline"
+                    >Read More &rarr;</a
+                  >
+                </div>
+              </div>
+              <div class="bg-dark rounded-lg overflow-hidden">
+                <img
+                  src="https://placehold.co/600x400/1F2937/FFFFFF?text=Telomeres"
+                  alt="Blog post image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-white">
+                    Telomeres 101: The Key to Your Cellular Lifespan
+                  </h3>
+                  <p class="mt-2 text-gray-400">
+                    Understanding the protective caps on our DNA and how
+                    technologies like CRISPR are being used to extend them.
+                  </p>
+                  <a
+                    href="#"
+                    class="mt-4 inline-block text-primary hover:underline"
+                    >Read More &rarr;</a
+                  >
+                </div>
+              </div>
+              <div class="bg-dark rounded-lg overflow-hidden">
+                <img
+                  src="https://placehold.co/600x400/4338CA/FFFFFF?text=AI+Diagnostics"
+                  alt="Blog post image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-white">
+                    Beyond the Blood Test: How AI is Revolutionizing Diagnostics
+                  </h3>
+                  <p class="mt-2 text-gray-400">
+                    An exploration of how artificial intelligence is analyzing
+                    complex 'omics' data to create truly personalized
+                    therapeutics.
+                  </p>
+                  <a
+                    href="#"
+                    class="mt-4 inline-block text-primary hover:underline"
+                    >Read More &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-dark mt-auto">
+        <div class="container mx-auto px-6 py-12">
+          <div
+            id="contact"
+            class="bg-secondary rounded-lg p-8 md:p-12 lg:flex lg:items-center lg:justify-between mb-12"
+          >
+            <div class="lg:w-1/2">
+              <h2 class="text-3xl font-bold text-white">Get in Touch</h2>
+              <p class="mt-2 text-gray-400">
+                Begin your conversation with us and explore the future of your
+                health.
+              </p>
+            </div>
+            <div class="mt-8 lg:mt-0 lg:w-1/2">
+              <form class="flex flex-col md:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full px-4 py-3 rounded-lg bg-dark border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-white"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-hover whitespace-nowrap"
+                >
+                  Contact Us
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h4 class="font-semibold text-white">Elysian Health</h4>
+              <a
+                href="#services"
+                class="block mt-4 text-gray-400 hover:text-primary"
+                >Services</a
+              >
+              <a
+                href="#pricing"
+                class="block mt-2 text-gray-400 hover:text-primary"
+                >Pricing</a
+              >
+            </div>
+            <div>
+              <h4 class="font-semibold text-white">Resources</h4>
+              <a
+                href="#blogs"
+                class="block mt-4 text-gray-400 hover:text-primary"
+                >Blog</a
+              >
+              <a href="#" class="block mt-2 text-gray-400 hover:text-primary"
+                >FAQs</a
+              >
+            </div>
+            <div>
+              <h4 class="font-semibold text-white">Company</h4>
+              <a href="#" class="block mt-4 text-gray-400 hover:text-primary"
+                >About Us</a
+              >
+              <a
+                href="#contact"
+                class="block mt-2 text-gray-400 hover:text-primary"
+                >Contact</a
+              >
+            </div>
+            <div>
+              <h4 class="font-semibold text-white">Legal</h4>
+              <a href="#" class="block mt-4 text-gray-400 hover:text-primary"
+                >Privacy Policy</a
+              >
+              <a href="#" class="block mt-2 text-gray-400 hover:text-primary"
+                >Terms & Conditions</a
+              >
+            </div>
+          </div>
+          <div
+            class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500"
+          >
+            &copy; 2025 Elysian Health. Engineering a healthier future.
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal for Supplement Deep Dive -->
+    <div
+      id="supplement-modal"
+      class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden animate-fade-in"
+    >
+      <div
+        id="modal-content"
+        class="bg-secondary rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative glass-effect"
+      >
+        <button
+          id="close-modal-btn"
+          class="absolute top-4 right-4 text-gray-400 hover:text-white"
+        >
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div id="modal-body">
+          <!-- Content injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase and App Logic -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+        onAuthStateChanged,
+        signOut,
+        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        setDoc,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      // --- App State ---
+      let db, auth;
+      let userId = null;
+      let healthProfileUnsubscribe = null;
+      let guestPlanGenerated = false;
+
+      // --- Firebase Config ---
+      const firebaseConfig =
+        typeof __firebase_config !== "undefined"
+          ? JSON.parse(__firebase_config)
+          : { apiKey: "AIza...", authDomain: "...", projectId: "...", ...{} };
+      const appId =
+        typeof __app_id !== "undefined" ? __app_id : "default-elysian-app";
+
+      // --- Gemini API Config ---
+      const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=`;
+
+      // --- UI Elements ---
+      const appContent = document.getElementById("app-content");
+      const authContainer = document.getElementById("auth-container");
+
+      // --- App Initialization ---
+      function initialize() {
+        try {
+          const app = initializeApp(firebaseConfig);
+          db = getFirestore(app);
+          auth = getAuth(app);
+          setupEventListeners();
+          lucide.createIcons();
+          handleAuthState();
+        } catch (error) {
+          console.error("Firebase initialization failed:", error);
+          appContent.innerHTML = `<div class="text-center text-red-500">Error: Could not connect to services. Please check console for details.</div>`;
+        }
+      }
+
+      function handleAuthState() {
+        onAuthStateChanged(auth, (user) => {
+          if (healthProfileUnsubscribe) healthProfileUnsubscribe();
+          guestPlanGenerated = false; // Reset guest flag on auth change
+
+          if (user) {
+            userId = user.uid;
+            renderAuthContainer(true, user.email, user.isAnonymous);
+            listenToHealthProfile();
+          } else {
+            userId = null;
+            renderAuthContainer(false);
+            renderLoginView();
+          }
+        });
+      }
+
+      function listenToHealthProfile() {
+        if (!userId) return;
+        const docRef = doc(
+          db,
+          `/artifacts/${appId}/users/${userId}/healthProfile/main`
+        );
+        healthProfileUnsubscribe = onSnapshot(
+          docRef,
+          (docSnap) => {
+            const profileData = docSnap.exists() ? docSnap.data() : null;
+            renderDashboardView(profileData);
+          },
+          (error) => {
+            console.error("Error listening to health profile:", error);
+            renderDashboardView(null); // Render empty dash on error
+          }
+        );
+      }
+
+      // --- UI Rendering ---
+
+      function renderAuthContainer(
+        isLoggedIn,
+        email = "",
+        isAnonymous = false
+      ) {
+        if (isLoggedIn) {
+          authContainer.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        ${
+                          isAnonymous
+                            ? `<span class="text-sm text-gray-300 hidden md:block">Guest Mode</span>`
+                            : email
+                            ? `<span class="text-sm text-gray-300 hidden md:block">${email}</span>`
+                            : ""
+                        }
+                        <button id="logout-btn" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg text-sm hover:bg-red-700">Logout</button>
+                    </div>`;
+          document
+            .getElementById("logout-btn")
+            .addEventListener("click", () => signOut(auth));
+        } else {
+          authContainer.innerHTML = `
+                     <button id="login-nav-btn" class="bg-primary text-white font-semibold px-4 py-2 rounded-lg text-sm hover:bg-primary-hover">Login / Sign Up</button>`;
+          document
+            .getElementById("login-nav-btn")
+            .addEventListener("click", () => {
+              document
+                .getElementById("ai-advisor")
+                .scrollIntoView({ behavior: "smooth" });
+              renderLoginView();
+            });
+        }
+      }
+
+      function renderLoginView() {
+        appContent.innerHTML = `
+                <div class="max-w-md mx-auto text-center animate-fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-2">Access Your Longevity Blueprint</h2>
+                    <p class="text-gray-400 mb-6">Sign in to consult the AI Advisor and view your personalized plan.</p>
+                    <div id="auth-error" class="text-red-400 mb-4 text-sm"></div>
+                    <form id="auth-form" class="space-y-4">
+                        <input type="email" id="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg bg-dark-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-white" required>
+                        <input type="password" id="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-dark-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-white" required>
+                        <div class="flex gap-4">
+                            <button type="submit" name="login" class="flex-1 bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary-hover">Login</button>
+                            <button type="submit" name="signup" class="flex-1 bg-gray-600 text-white font-semibold py-3 rounded-lg hover:bg-gray-500">Sign Up</button>
+                        </div>
+                    </form>
+                    <div class="my-4 flex items-center before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
+                        <p class="text-center text-sm text-gray-500 mx-4 mb-0">OR</p>
+                    </div>
+                    <button id="passkey-login-btn" class="w-full bg-dark-secondary border border-primary text-primary font-semibold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="fingerprint" class="w-5 h-5"></i> Sign in with Passkey
+                    </button>
+                    <p class="text-gray-500 text-xs my-4">Passkey & OTP features are coming soon for enhanced security.</p>
+                    <button id="anon-login-btn" class="mt-2 text-primary hover:underline text-sm">Continue as Guest</button>
+                </div>`;
+
+        lucide.createIcons();
+        document
+          .getElementById("auth-form")
+          .addEventListener("submit", handleAuthFormSubmit);
+        document
+          .getElementById("anon-login-btn")
+          .addEventListener("click", () =>
+            signInAnonymously(auth).catch((e) => console.error(e))
+          );
+        document
+          .getElementById("passkey-login-btn")
+          .addEventListener("click", () => {
+            showNotification(
+              "Passkey authentication is a future-ready feature coming soon!",
+              "info"
+            );
+          });
+      }
+
+      function renderDashboardView(profile) {
+        const hasPlan = profile && profile.longevityPlan;
+        appContent.innerHTML = `
+            <div class="flex flex-col h-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Left Side: Input Form -->
+                    <div class="flex flex-col">
+                        <h2 class="text-2xl font-bold text-white">AI Health Advisor</h2>
+                        <p class="text-gray-400 mb-6">Provide some basic info to generate or update your plan. This is for demonstration purposes only.</p>
+                        <form id="advisor-form" class="space-y-4">
+                            <div>
+                                <label for="age" class="block text-sm font-medium text-gray-300">Age</label>
+                                <input type="number" id="age" value="${
+                                  profile?.age || "35"
+                                }" class="w-full mt-1 px-3 py-2 rounded-lg bg-dark-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div>
+                                <label for="goal" class="block text-sm font-medium text-gray-300">Primary Health Goal</label>
+                                <select id="goal" class="w-full mt-1 px-3 py-2 rounded-lg bg-dark-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option ${
+                                      profile?.goal === "Improve Energy"
+                                        ? "selected"
+                                        : ""
+                                    }>Improve Energy</option>
+                                    <option ${
+                                      profile?.goal ===
+                                      "Optimize Cognitive Function"
+                                        ? "selected"
+                                        : ""
+                                    }>Optimize Cognitive Function</option>
+                                    <option ${
+                                      profile?.goal === "Maximize Lifespan"
+                                        ? "selected"
+                                        : ""
+                                    }>Maximize Lifespan</option>
+                                    <option ${
+                                      profile?.goal ===
+                                      "Enhance Physical Performance"
+                                        ? "selected"
+                                        : ""
+                                    }>Enhance Physical Performance</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="diet" class="block text-sm font-medium text-gray-300">Current Diet</label>
+                                <select id="diet" class="w-full mt-1 px-3 py-2 rounded-lg bg-dark-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option ${
+                                      profile?.diet === "Standard"
+                                        ? "selected"
+                                        : ""
+                                    }>Standard</option>
+                                    <option ${
+                                      profile?.diet === "Vegetarian"
+                                        ? "selected"
+                                        : ""
+                                    }>Vegetarian</option>
+                                    <option ${
+                                      profile?.diet === "Keto/Low-Carb"
+                                        ? "selected"
+                                        : ""
+                                    }>Keto/Low-Carb</option>
+                                    <option ${
+                                      profile?.diet === "Mediterranean"
+                                        ? "selected"
+                                        : ""
+                                    }>Mediterranean</option>
+                                </select>
+                            </div>
+                            <button id="generate-plan-btn" type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary-hover">
+                                ${
+                                  hasPlan
+                                    ? "Update My Plan"
+                                    : "Generate My Plan"
+                                }
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Right Side: Results -->
+                    <div id="plan-container" class="flex flex-col bg-dark-secondary rounded-lg p-6 overflow-y-auto min-h-[50vh]">
+                        <h2 class="text-2xl font-bold text-white mb-4">Your Personalized Longevity Plan</h2>
+                        <div id="plan-content" class="prose prose-invert max-w-none text-gray-300">
+                            ${
+                              hasPlan
+                                ? formatPlan(profile.longevityPlan)
+                                : '<p class="text-gray-500">Your AI-generated plan will appear here...</p>'
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Wellness Tools Section -->
+                <div class="mt-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">✨ AI Wellness Tools</h2>
+                    <div class="bg-dark-secondary rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white">Meal Deconstructor</h3>
+                        <p class="text-gray-400 mt-1 mb-4">Curious about what you ate? Describe your meal below.</p>
+                        <form id="meal-form" class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" id="meal-input" placeholder="e.g., Chicken breast with quinoa and broccoli" class="flex-grow px-3 py-2 rounded-lg bg-dark border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            <button type="submit" id="deconstruct-btn" class="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-hover flex items-center justify-center gap-2">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i><span>Analyze Meal</span>
+                            </button>
+                        </form>
+                        <div id="meal-result" class="mt-4 text-gray-300 prose prose-invert max-w-none"></div>
+                    </div>
+                </div>
+            </div>
+            `;
+
+        lucide.createIcons();
+        document
+          .getElementById("advisor-form")
+          .addEventListener("submit", handleAdvisorFormSubmit);
+        document
+          .getElementById("meal-form")
+          .addEventListener("submit", handleMealDeconstruct);
+      }
+
+      // --- Event Handlers & Core Logic ---
+
+      async function handleAuthFormSubmit(e) {
+        e.preventDefault();
+        const action = e.submitter.name;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const errorDiv = document.getElementById("auth-error");
+        errorDiv.textContent = "";
+        const btn = e.submitter;
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>`;
+
+        try {
+          if (action === "login") {
+            await signInWithEmailAndPassword(auth, email, password);
+          } else if (action === "signup") {
+            await createUserWithEmailAndPassword(auth, email, password);
+          }
+        } catch (error) {
+          errorDiv.textContent = error.message;
+          showNotification(error.message, "error");
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }
+      }
+
+      async function handleAdvisorFormSubmit(e) {
+        e.preventDefault();
+        if (!userId) return;
+
+        // Freemium check for anonymous users
+        if (auth.currentUser?.isAnonymous && guestPlanGenerated) {
+          showNotification(
+            "Please create a free account to generate more plans.",
+            "info"
+          );
+          return;
+        }
+
+        const age = document.getElementById("age").value;
+        const goal = document.getElementById("goal").value;
+        const diet = document.getElementById("diet").value;
+        const userData = { age, goal, diet };
+
+        const btn = document.getElementById("generate-plan-btn");
+        btn.disabled = true;
+        btn.innerHTML = `<div class="flex items-center justify-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Analyzing...</div>`;
+        document.getElementById(
+          "plan-content"
+        ).innerHTML = `<p class="text-gray-400">The AI Advisor is analyzing your profile to generate a new plan...</p>`;
+
+        const systemPrompt = `You are an AI Health Advisor for Elysian Health, a futuristic longevity clinic. Your advice is based on principles of biological mastery, cellular health, and personalized medicine. Your response MUST NOT be medical advice, and you MUST include a disclaimer.
+            Analyze the user's profile and generate a personalized longevity plan. The plan should be structured in markdown with these sections:
+            - **Nutrition & Diet:**
+            - **Supplement Protocol:**
+            - **Lifestyle & Bio-hacks:**
+            - **Future Considerations:**
+            - **Disclaimer:**`;
+
+        const userQuery = `My Profile:\n- Age: ${age}\n- Primary Goal: ${goal}\n- Current Diet: ${diet}\nPlease generate my personalized longevity plan.`;
+
+        try {
+          const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            }),
+          });
+
+          if (!response.ok)
+            throw new Error(`API Error: ${response.statusText}`);
+          const result = await response.json();
+          const planText =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Could not generate a plan.";
+
+          const docRef = doc(
+            db,
+            `/artifacts/${appId}/users/${userId}/healthProfile/main`
+          );
+          await setDoc(docRef, {
+            ...userData,
+            longevityPlan: planText,
+            updatedAt: new Date(),
+          });
+
+          if (auth.currentUser?.isAnonymous) {
+            guestPlanGenerated = true;
+          }
+          showNotification(
+            "Your new longevity plan has been generated!",
+            "success"
+          );
+          // The onSnapshot listener will automatically re-render the view with the new data.
+        } catch (error) {
+          console.error("Plan generation failed:", error);
+          document.getElementById(
+            "plan-content"
+          ).innerHTML = `<p class="text-red-500">An error occurred while generating your plan. Please try again.</p>`;
+          showNotification(`Error: ${error.message}`, "error");
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = "Update My Plan";
+        }
+      }
+
+      async function handleMealDeconstruct(e) {
+        e.preventDefault();
+        const mealInput = document.getElementById("meal-input");
+        const mealDescription = mealInput.value;
+        if (!mealDescription) return;
+
+        const btn = document.getElementById("deconstruct-btn");
+        const resultDiv = document.getElementById("meal-result");
+        btn.disabled = true;
+        btn.querySelector("span").textContent = "Analyzing...";
+
+        const systemPrompt = `You are a nutritional AI assistant. A user has provided a meal they ate. Your response must be in markdown. First, create a section '### Potential Analysis' and briefly analyze the meal's potential health benefits and drawbacks in simple terms using a bulleted list. Then, create a section '### Suggestion' and suggest ONE healthier alternative OR a complementary food. Do not give medical advice.`;
+        const userQuery = `Analyze this meal: ${mealDescription}`;
+
+        try {
+          const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            }),
+          });
+          if (!response.ok)
+            throw new Error(`API Error: ${response.statusText}`);
+          const result = await response.json();
+          const analysisText =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Could not analyze meal.";
+          resultDiv.innerHTML = formatPlan(analysisText);
+        } catch (error) {
+          console.error("Meal deconstruction failed:", error);
+          resultDiv.innerHTML = `<p class="text-red-500">Could not analyze meal. Please try again.</p>`;
+        } finally {
+          btn.disabled = false;
+          btn.querySelector("span").textContent = "Analyze Meal";
+          lucide.createIcons();
+        }
+      }
+
+      async function handleSupplementDeepDive(supplementName) {
+        const modal = document.getElementById("supplement-modal");
+        const modalBody = document.getElementById("modal-body");
+        modal.classList.remove("hidden");
+        modalBody.innerHTML = `
+                <h2 class="text-2xl font-bold text-white mb-4">${supplementName}</h2>
+                <div class="flex items-center justify-center h-32">
+                    <svg class="animate-spin h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                </div>
+            `;
+
+        const systemPrompt = `You are a health and science educator AI. Explain the supplement '${supplementName}' in simple, easy-to-understand terms for a layperson. Your response should be in markdown format. Cover its primary function, potential benefits related to longevity and health, and mention 2-3 natural food sources where it can be found. Do NOT give medical advice or dosage information. End with a disclaimer that the user should consult a healthcare professional.`;
+        const userQuery = `Provide a deep dive on ${supplementName}.`;
+
+        try {
+          const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            }),
+          });
+          if (!response.ok)
+            throw new Error(`API Error: ${response.statusText}`);
+          const result = await response.json();
+          const deepDiveText =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Could not retrieve information.";
+
+          modalBody.innerHTML = `
+                    <h2 class="text-2xl font-bold text-white mb-4">${supplementName}</h2>
+                    <div class="prose prose-invert max-w-none text-gray-300">${formatPlan(
+                      deepDiveText
+                    )}</div>
+                `;
+        } catch (error) {
+          console.error("Deep dive failed:", error);
+          modalBody.innerHTML = `
+                    <h2 class="text-2xl font-bold text-white mb-4">${supplementName}</h2>
+                    <p class="text-red-500">Could not load details. Please try again later.</p>`;
+        }
+      }
+
+      function formatPlan(text) {
+        const lines = text.split("\n");
+        let inSupplementSection = false;
+        let html = "";
+
+        for (const line of lines) {
+          if (line.includes("**Supplement Protocol**")) {
+            inSupplementSection = true;
+            html += `<strong>${line.replace(/\*\*/g, "")}</strong><br>`;
+            continue;
+          } else if (line.startsWith("**")) {
+            inSupplementSection = false;
+          }
+
+          if (inSupplementSection && line.trim().startsWith("*")) {
+            const content = line.trim().substring(1).trim();
+            const supplementName = content
+              .split(":")[0]
+              .replace(/\*/g, "")
+              .trim();
+            html += `<li class="ml-6 list-disc flex items-center justify-between py-1">${content} 
+                                <button class="supplement-deep-dive-btn text-xs bg-primary/20 text-primary px-2 py-1 rounded hover:bg-primary/40 ml-2 whitespace-nowrap" data-supplement="${supplementName}">
+                                    Learn More ✨
+                                </button>
+                            </li>`;
+            continue;
+          }
+
+          if (line.startsWith("### "))
+            html += `<h3 class="text-xl font-semibold text-white mt-4 mb-2">${line.substring(
+              4
+            )}</h3>`;
+          else if (line.startsWith("## "))
+            html += `<h2 class="text-2xl font-bold text-white mt-6 mb-3">${line.substring(
+              3
+            )}</h2>`;
+          else if (line.startsWith("**"))
+            html += `<strong>${line.replace(/\*\*/g, "")}</strong><br>`;
+          else if (line.trim().startsWith("*"))
+            html += `<li class="ml-6 list-disc">${line
+              .trim()
+              .substring(1)
+              .trim()}</li>`;
+          else if (line.trim()) html += `<p>${line}</p>`;
+        }
+        return html;
+      }
+
+      /**
+       * Displays a toast-style notification.
+       * @param {string} message The message to display.
+       * @param {'info'|'success'|'error'} type The type of notification.
+       */
+      function showNotification(message, type = "info") {
+        const colors = {
+          info: "bg-blue-500",
+          success: "bg-accent",
+          error: "bg-red-500",
+        };
+        const notif = document.createElement("div");
+        notif.className = `fixed bottom-5 right-5 p-4 rounded-lg text-white ${colors[type]} shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50`;
+        notif.textContent = message;
+        document.body.appendChild(notif);
+
+        // Animate in
+        setTimeout(() => {
+          notif.classList.remove("translate-y-20", "opacity-0");
+        }, 10);
+
+        // Animate out and remove
+        setTimeout(() => {
+          notif.classList.add("translate-y-20", "opacity-0");
+          setTimeout(() => notif.remove(), 300);
+        }, 4000);
+      }
+
+      function setupEventListeners() {
+        document
+          .getElementById("mobile-menu-button")
+          .addEventListener("click", () => {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+          });
+
+        document
+          .getElementById("currency-toggle")
+          .addEventListener("change", (e) => {
+            const isINR = e.target.checked;
+            document
+              .getElementById("usd-label")
+              .classList.toggle("text-primary", !isINR);
+            document
+              .getElementById("inr-label")
+              .classList.toggle("text-primary", isINR);
+            document.querySelectorAll("[data-price-usd]").forEach((el) => {
+              el.textContent = isINR
+                ? `₹${el.dataset.priceInr}`
+                : `$${el.dataset.priceUsd}`;
+            });
+          });
+
+        // Active nav link highlighting on scroll
+        const sections = document.querySelectorAll("main > section");
+        const navLinks = document.querySelectorAll("#main-nav a.nav-link");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => {
+                  link.classList.remove("active");
+                  if (
+                    link.getAttribute("href").substring(1) === entry.target.id
+                  ) {
+                    link.classList.add("active");
+                  }
+                });
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        // Modal close button
+        document
+          .getElementById("close-modal-btn")
+          .addEventListener("click", () => {
+            document.getElementById("supplement-modal").classList.add("hidden");
+          });
+
+        // Click delegation for dynamic supplement buttons
+        appContent.addEventListener("click", (e) => {
+          if (e.target.closest(".supplement-deep-dive-btn")) {
+            const btn = e.target.closest(".supplement-deep-dive-btn");
+            const supplementName = btn.dataset.supplement;
+            if (supplementName) handleSupplementDeepDive(supplementName);
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", initialize);
+    </script>
+  </body>
+</html>
