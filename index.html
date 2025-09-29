@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elysian Health | AI-Powered Longevity & Healthspan</title>
+    <title>The ChitraHarshaKosha | AI-Powered Longevity & Healthspan</title>
     <meta
       name="description"
-      content="Elysian Health combines AI-driven diagnostics and cellular science to create personalized plans for extending your healthspan. Unlock your biological potential."
+      content="The ChitraHarshaKosha combines AI-driven diagnostics and cellular science to create personalized plans for extending your healthspan. Unlock your biological potential."
     />
     <meta
       name="keywords"
-      content="Longevity, Healthspan, Bio-hacking, AI Health, Personalized Medicine, Cellular Reprogramming, Genetic Analysis, Biological Mastery"
+      content="Longevity, Healthspan, Bio-hacking, AI Health, Personalized Medicine, Cellular Reprogramming, Genetic Analysis, The ChitraHarshaKosha"
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,23 +20,34 @@
         theme: {
           extend: {
             colors: {
-              primary: "#4338CA", // A deep, trustworthy indigo
-              "primary-hover": "#3730A3",
-              secondary: "#1F2937",
-              light: "#F9FAFB",
-              dark: "#111827",
-              "dark-secondary": "#1F2937",
-              accent: "#10B981", // Emerald for health/success
+              primary: "#7C3AED", // Vibrant Violet
+              "primary-hover": "#6D28D9",
+              secondary: "#0F172A", // Deep Slate Blue
+              light: "#F1F5F9",
+              dark: "#020617", // Near Black
+              "dark-secondary": "#1E293B", // Darker Slate
+              accent: "#06B6D4", // Bright Cyan
             },
             animation: {
               "fade-in": "fadeIn 0.5s ease-in-out",
               "slide-in-up": "slideInUp 0.5s ease-in-out",
+              "text-gradient": "textGradient 5s ease infinite",
             },
             keyframes: {
               fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
               slideInUp: {
                 "0%": { transform: "translateY(20px)", opacity: 0 },
                 "100%": { transform: "translateY(0)", opacity: 1 },
+              },
+              textGradient: {
+                "0%, 100%": {
+                  "background-size": "200% 200%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
               },
             },
           },
@@ -53,15 +64,24 @@
         font-family: "Inter", sans-serif;
       }
       .glass-effect {
-        background: rgba(17, 24, 39, 0.5);
+        background: rgba(15, 23, 42, 0.6);
         backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
       }
-      .glowing-border-primary {
-        box-shadow: 0 0 15px rgba(67, 56, 202, 0.6);
+      .glowing-border {
+        box-shadow: 0 0 15px rgba(124, 58, 237, 0.4),
+          0 0 5px rgba(6, 182, 212, 0.3);
+        border: 1px solid rgba(124, 58, 237, 0.5);
       }
       .nav-link.active {
-        color: #4338ca;
+        color: #7c3aed;
+      }
+      .animated-gradient-text {
+        background-image: linear-gradient(to right, #7c3aed, #06b6d4, #7c3aed);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: text-gradient 5s ease infinite;
       }
     </style>
   </head>
@@ -73,9 +93,70 @@
         <nav
           class="container mx-auto px-6 py-4 flex justify-between items-center"
         >
-          <a href="#home" class="flex items-center space-x-2">
-            <i data-lucide="heart-pulse" class="w-8 h-8 text-primary"></i>
-            <span class="text-xl font-bold text-white">Elysian Health</span>
+          <a href="#home" class="flex items-center space-x-3">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+            >
+              <defs>
+                <linearGradient
+                  id="logoGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" style="stop-color: #7c3aed" />
+                  <stop offset="100%" style="stop-color: #06b6d4" />
+                </linearGradient>
+                <filter
+                  id="logoGlow"
+                  x="-50%"
+                  y="-50%"
+                  width="200%"
+                  height="200%"
+                >
+                  <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <g style="filter: url(#logoGlow)">
+                <path
+                  d="M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z"
+                  fill="none"
+                  stroke="url(#logoGradient)"
+                  stroke-width="5"
+                />
+                <path
+                  d="M50 5 L50 95"
+                  fill="none"
+                  stroke="#06B6D4"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M5 27.5 L95 72.5"
+                  fill="none"
+                  stroke="#7C3AED"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M95 27.5 L5 72.5"
+                  fill="none"
+                  stroke="#7C3AED"
+                  stroke-width="2.5"
+                />
+              </g>
+            </svg>
+            <span
+              class="text-xl font-bold text-white hover:text-primary transition-colors"
+              >The ChitraHarshaKosha</span
+            >
           </a>
           <div
             class="hidden md:flex items-center space-x-6 text-gray-300"
@@ -141,34 +222,36 @@
         <!-- Home/Hero Section -->
         <section
           id="home"
-          class="py-24 md:py-32 bg-cover bg-center"
+          class="py-24 md:py-32 bg-cover bg-center relative overflow-hidden"
           style="
             background-image: linear-gradient(
-                rgba(17, 24, 39, 0.9),
-                rgba(17, 24, 39, 1)
+                rgba(2, 6, 23, 0.9),
+                rgba(2, 6, 23, 1)
               ),
-              url('https://placehold.co/1920x1080/111827/4338CA?text=Elysian');
+              url('https://placehold.co/1920x1080/020617/7C3AED?text=Kosha');
           "
         >
-          <div class="container mx-auto px-6 text-center">
+          <div
+            class="absolute inset-0 bg-grid-slate-700/[0.05] bg-[bottom_1px_center] [mask-image:linear-gradient(to_bottom,transparent,white)]"
+          ></div>
+          <div class="container mx-auto px-6 text-center relative z-10">
             <h1
-              class="text-4xl md:text-6xl font-bold text-white leading-tight animate-fade-in"
+              class="text-4xl md:text-6xl font-bold text-white leading-tight animate-fade-in animated-gradient-text"
             >
-              Engineer Your Longevity.
+              Unlocking Your Inner Universe of Health.
             </h1>
             <p
               class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-slide-in-up"
               style="animation-delay: 0.2s"
             >
-              We merge AI-driven diagnostics with cutting-edge cellular science
-              to create your personalized blueprint for a longer, healthier
-              life.
+              The ChitraHarshaKosha translates your unique biology into a
+              personalized, AI-powered roadmap for a longer, more vibrant life.
             </p>
             <a
               href="#ai-advisor"
               class="mt-8 inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-hover transition-transform transform hover:scale-105 animate-slide-in-up"
               style="animation-delay: 0.4s"
-              >Begin Your Journey</a
+              >Begin Your Blueprint</a
             >
           </div>
         </section>
@@ -231,11 +314,11 @@
         </section>
 
         <!-- AI Advisor Section -->
-        <section id="ai-advisor" class="py-20 bg-secondary">
+        <section id="ai-advisor" class="py-20 bg-dark-secondary/50">
           <div class="container mx-auto px-6">
             <div
               id="app-content"
-              class="bg-dark rounded-lg p-6 md:p-8 glowing-border-primary min-h-[70vh] flex flex-col"
+              class="bg-dark rounded-lg p-6 md:p-8 glowing-border min-h-[70vh] flex flex-col"
             >
               <!-- Content will be dynamically rendered here based on auth state -->
             </div>
@@ -286,15 +369,24 @@
                 </div>
                 <ul class="mt-6 space-y-4 text-gray-300 text-left">
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >AI Health Advisor Access
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Advanced Liquid Biopsy
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Basic Genetic Marker Analysis
                   </li>
                 </ul>
@@ -305,7 +397,7 @@
                 </button>
               </div>
               <div
-                class="bg-secondary rounded-lg p-8 border-2 border-primary glowing-border-primary"
+                class="bg-secondary rounded-lg p-8 border-2 border-primary glowing-border"
               >
                 <h3 class="text-2xl font-semibold text-primary">
                   Advanced Blueprint
@@ -321,19 +413,31 @@
                 </div>
                 <ul class="mt-6 space-y-4 text-gray-300 text-left">
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >All Essential Features
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Whole Genome Sequencing
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Personalized Longevity Plan
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Quarterly Health Reviews
                   </li>
                 </ul>
@@ -352,19 +456,31 @@
                 </div>
                 <ul class="mt-6 space-y-4 text-gray-300 text-left">
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >All Advanced Features
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Cellular Reprogramming R&D Access
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Concierge Medical Team
                   </li>
                   <li class="flex items-center">
-                    <i data-lucide="check" class="w-5 h-5 text-accent mr-2"></i
+                    <i
+                      data-lucide="check-circle-2"
+                      class="w-5 h-5 text-accent mr-2"
+                    ></i
                     >Annual Retreats
                   </li>
                 </ul>
@@ -379,20 +495,20 @@
         </section>
 
         <!-- Blogs Section -->
-        <section id="blogs" class="py-20 bg-secondary">
+        <section id="blogs" class="py-20 bg-dark-secondary/50">
           <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
-              The Elysian Archives
+              The Kosha Archives
             </h2>
             <p class="mt-2 text-gray-400 text-center">
               Insights from the forefront of longevity science.
             </p>
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="bg-dark rounded-lg overflow-hidden">
+              <div class="bg-secondary rounded-lg overflow-hidden group">
                 <img
-                  src="https://placehold.co/600x400/111827/FFFFFF?text=Cellular+Science"
+                  src="https://placehold.co/600x400/0F172A/FFFFFF?text=Cellular+Science"
                   alt="Blog post image"
-                  class="w-full h-48 object-cover"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="p-6">
                   <h3 class="text-xl font-semibold text-white">
@@ -409,11 +525,11 @@
                   >
                 </div>
               </div>
-              <div class="bg-dark rounded-lg overflow-hidden">
+              <div class="bg-secondary rounded-lg overflow-hidden group">
                 <img
-                  src="https://placehold.co/600x400/1F2937/FFFFFF?text=Telomeres"
+                  src="https://placehold.co/600x400/1E293B/FFFFFF?text=Telomeres"
                   alt="Blog post image"
-                  class="w-full h-48 object-cover"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="p-6">
                   <h3 class="text-xl font-semibold text-white">
@@ -430,11 +546,11 @@
                   >
                 </div>
               </div>
-              <div class="bg-dark rounded-lg overflow-hidden">
+              <div class="bg-secondary rounded-lg overflow-hidden group">
                 <img
-                  src="https://placehold.co/600x400/4338CA/FFFFFF?text=AI+Diagnostics"
+                  src="https://placehold.co/600x400/7C3AED/FFFFFF?text=AI+Diagnostics"
                   alt="Blog post image"
-                  class="w-full h-48 object-cover"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div class="p-6">
                   <h3 class="text-xl font-semibold text-white">
@@ -491,7 +607,7 @@
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h4 class="font-semibold text-white">Elysian Health</h4>
+              <h4 class="font-semibold text-white">The ChitraHarshaKosha</h4>
               <a
                 href="#services"
                 class="block mt-4 text-gray-400 hover:text-primary"
@@ -538,7 +654,7 @@
           <div
             class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500"
           >
-            &copy; 2025 Elysian Health. Engineering a healthier future.
+            &copy; 2025 The ChitraHarshaKosha. Engineering a healthier future.
           </div>
         </div>
       </footer>
@@ -547,11 +663,11 @@
     <!-- Modal for Supplement Deep Dive -->
     <div
       id="supplement-modal"
-      class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden animate-fade-in"
+      class="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 hidden animate-fade-in"
     >
       <div
         id="modal-content"
-        class="bg-secondary rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative glass-effect"
+        class="bg-secondary rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto relative glass-effect border border-primary/50"
       >
         <button
           id="close-modal-btn"
@@ -595,7 +711,7 @@
           ? JSON.parse(__firebase_config)
           : { apiKey: "AIza...", authDomain: "...", projectId: "...", ...{} };
       const appId =
-        typeof __app_id !== "undefined" ? __app_id : "default-elysian-app";
+        typeof __app_id !== "undefined" ? __app_id : "default-chitrakosha-app";
 
       // --- Gemini API Config ---
       const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=`;
@@ -817,7 +933,7 @@
                         <div id="plan-content" class="prose prose-invert max-w-none text-gray-300">
                             ${
                               hasPlan
-                                ? formatPlan(profile.longevityPlan)
+                                ? formatPlan(profile.longevityPlan, "main-plan")
                                 : '<p class="text-gray-500">Your AI-generated plan will appear here...</p>'
                             }
                         </div>
@@ -827,16 +943,44 @@
                 <!-- AI Wellness Tools Section -->
                 <div class="mt-8">
                     <h2 class="text-2xl font-bold text-white mb-4">✨ AI Wellness Tools</h2>
-                    <div class="bg-dark-secondary rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-white">Meal Deconstructor</h3>
-                        <p class="text-gray-400 mt-1 mb-4">Curious about what you ate? Describe your meal below.</p>
-                        <form id="meal-form" class="flex flex-col sm:flex-row gap-2">
-                            <input type="text" id="meal-input" placeholder="e.g., Chicken breast with quinoa and broccoli" class="flex-grow px-3 py-2 rounded-lg bg-dark border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                            <button type="submit" id="deconstruct-btn" class="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-hover flex items-center justify-center gap-2">
-                                <i data-lucide="sparkles" class="w-4 h-4"></i><span>Analyze Meal</span>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-dark-secondary rounded-lg p-6">
+                            <h3 class="text-xl font-semibold text-white">Meal Deconstructor</h3>
+                            <p class="text-gray-400 mt-1 mb-4">Curious about what you ate? Describe your meal below.</p>
+                            <form id="meal-form" class="flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="meal-input" placeholder="e.g., Chicken breast with quinoa and broccoli" class="flex-grow px-3 py-2 rounded-lg bg-dark border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                <button type="submit" id="deconstruct-btn" class="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-hover flex items-center justify-center gap-2">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i><span>Analyze Meal</span>
+                                </button>
+                            </form>
+                            <div id="meal-result" class="mt-4 text-gray-300 prose prose-invert max-w-none"></div>
+                        </div>
+
+                        <div class="bg-dark-secondary rounded-lg p-6">
+                            <h3 class="text-xl font-semibold text-white">Personalized Affirmations</h3>
+                            <p class="text-gray-400 mt-1 mb-4">Generate affirmations based on your primary health goal.</p>
+                            <button type="button" id="affirmation-btn" ${
+                              !profile?.goal ? "disabled" : ""
+                            } class="w-full bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-hover flex items-center justify-center gap-2 disabled:bg-gray-500 disabled:cursor-not-allowed" title="${
+          !profile?.goal
+            ? "Please set a health goal first"
+            : "Generate affirmations"
+        }">
+                                <i data-lucide="quote" class="w-4 h-4"></i><span>Generate Affirmations</span>
+                            </button>
+                            <div id="affirmation-result" class="mt-4 text-gray-300 prose prose-invert max-w-none"></div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-secondary rounded-lg p-6 mt-6">
+                        <h3 class="text-xl font-semibold text-white">Dream Interpreter</h3>
+                        <p class="text-gray-400 mt-1 mb-4">Explore the potential meaning behind your dreams.</p>
+                        <form id="dream-form">
+                            <textarea id="dream-input" rows="4" placeholder="Describe your dream here..." class="w-full px-3 py-2 rounded-lg bg-dark border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                            <button type="submit" id="interpret-btn" class="mt-2 bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-hover flex items-center justify-center gap-2">
+                                <i data-lucide="moon-star" class="w-4 h-4"></i><span>Interpret Dream</span>
                             </button>
                         </form>
-                        <div id="meal-result" class="mt-4 text-gray-300 prose prose-invert max-w-none"></div>
+                        <div id="dream-result" class="mt-4 text-gray-300 prose prose-invert max-w-none"></div>
                     </div>
                 </div>
             </div>
@@ -849,6 +993,16 @@
         document
           .getElementById("meal-form")
           .addEventListener("submit", handleMealDeconstruct);
+        document
+          .getElementById("dream-form")
+          .addEventListener("submit", handleDreamInterpretation);
+
+        const affirmationBtn = document.getElementById("affirmation-btn");
+        if (affirmationBtn) {
+          affirmationBtn.addEventListener("click", () =>
+            handleAffirmationGeneration(profile?.goal)
+          );
+        }
       }
 
       // --- Event Handlers & Core Logic ---
@@ -905,7 +1059,7 @@
           "plan-content"
         ).innerHTML = `<p class="text-gray-400">The AI Advisor is analyzing your profile to generate a new plan...</p>`;
 
-        const systemPrompt = `You are an AI Health Advisor for Elysian Health, a futuristic longevity clinic. Your advice is based on principles of biological mastery, cellular health, and personalized medicine. Your response MUST NOT be medical advice, and you MUST include a disclaimer.
+        const systemPrompt = `You are an AI Health Advisor for The ChitraHarshaKosha, a futuristic longevity clinic. Your advice is based on principles of biological mastery, cellular health, and personalized medicine. Your response MUST NOT be medical advice, and you MUST include a disclaimer.
             Analyze the user's profile and generate a personalized longevity plan. The plan should be structured in markdown with these sections:
             - **Nutrition & Diet:**
             - **Supplement Protocol:**
@@ -972,6 +1126,7 @@
         const resultDiv = document.getElementById("meal-result");
         btn.disabled = true;
         btn.querySelector("span").textContent = "Analyzing...";
+        resultDiv.innerHTML = `<div class="flex items-center justify-center p-4"><svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>`;
 
         const systemPrompt = `You are a nutritional AI assistant. A user has provided a meal they ate. Your response must be in markdown. First, create a section '### Potential Analysis' and briefly analyze the meal's potential health benefits and drawbacks in simple terms using a bulleted list. Then, create a section '### Suggestion' and suggest ONE healthier alternative OR a complementary food. Do not give medical advice.`;
         const userQuery = `Analyze this meal: ${mealDescription}`;
@@ -999,6 +1154,89 @@
           btn.disabled = false;
           btn.querySelector("span").textContent = "Analyze Meal";
           lucide.createIcons();
+        }
+      }
+
+      async function handleAffirmationGeneration(goal) {
+        if (!goal) {
+          showNotification(
+            "Set a primary health goal to generate affirmations.",
+            "info"
+          );
+          return;
+        }
+
+        const btn = document.getElementById("affirmation-btn");
+        const resultDiv = document.getElementById("affirmation-result");
+        btn.disabled = true;
+        btn.querySelector("span").textContent = "Generating...";
+        resultDiv.innerHTML = `<div class="flex items-center justify-center p-4"><svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>`;
+
+        const systemPrompt = `You are an AI wellness coach for The ChitraHarshaKosha. The user's primary health goal is '${goal}'. Generate 3 short, powerful, first-person affirmations in a numbered list to support this goal. The response should be only the markdown numbered list.`;
+        const userQuery = `Generate affirmations for my goal.`;
+
+        try {
+          const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            }),
+          });
+          if (!response.ok)
+            throw new Error(`API Error: ${response.statusText}`);
+          const result = await response.json();
+          const affirmationText =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Could not generate affirmations.";
+          resultDiv.innerHTML = formatPlan(affirmationText);
+        } catch (error) {
+          console.error("Affirmation generation failed:", error);
+          resultDiv.innerHTML = `<p class="text-red-500">Could not generate affirmations. Please try again.</p>`;
+        } finally {
+          btn.disabled = false;
+          btn.querySelector("span").textContent = "Generate Affirmations";
+        }
+      }
+
+      async function handleDreamInterpretation(e) {
+        e.preventDefault();
+        const dreamInput = document.getElementById("dream-input");
+        const dreamDescription = dreamInput.value;
+        if (!dreamDescription) return;
+
+        const btn = document.getElementById("interpret-btn");
+        const resultDiv = document.getElementById("dream-result");
+        btn.disabled = true;
+        btn.querySelector("span").textContent = "Interpreting...";
+        resultDiv.innerHTML = `<div class="flex items-center justify-center p-4"><svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>`;
+
+        const systemPrompt = `You are a dream interpretation AI assistant for The ChitraHarshaKosha, focusing on wellness and self-reflection. Interpret the following dream from a modern, psychological perspective. Do not present the interpretation as fact, but as potential insights. Structure your response in markdown. Start with a section '### Potential Themes' and then a section '### Reflective Questions'. This is for entertainment and self-reflection, not a psychological diagnosis. Include a disclaimer.`;
+        const userQuery = `My dream: ${dreamDescription}`;
+
+        try {
+          const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            }),
+          });
+          if (!response.ok)
+            throw new Error(`API Error: ${response.statusText}`);
+          const result = await response.json();
+          const interpretationText =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Could not interpret dream.";
+          resultDiv.innerHTML = formatPlan(interpretationText);
+        } catch (error) {
+          console.error("Dream interpretation failed:", error);
+          resultDiv.innerHTML = `<p class="text-red-500">Could not interpret dream. Please try again.</p>`;
+        } finally {
+          btn.disabled = false;
+          btn.querySelector("span").textContent = "Interpret Dream";
         }
       }
 
@@ -1046,52 +1284,63 @@
         }
       }
 
-      function formatPlan(text) {
-        const lines = text.split("\n");
+      function formatPlan(text, context = "") {
+        let html = text
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(
+            /### (.*)/g,
+            '<h3 class="text-xl font-semibold text-white mt-4 mb-2">$1</h3>'
+          )
+          .replace(
+            /## (.*)/g,
+            '<h2 class="text-2xl font-bold text-white mt-6 mb-3">$1</h2>'
+          );
+
+        const lines = html.split("\n");
+        let inList = false;
+        let finalHtml = "";
+        const isMainPlan = context === "main-plan";
         let inSupplementSection = false;
-        let html = "";
 
         for (const line of lines) {
-          if (line.includes("**Supplement Protocol**")) {
+          if (line.includes("<strong>Supplement Protocol:</strong>")) {
             inSupplementSection = true;
-            html += `<strong>${line.replace(/\*\*/g, "")}</strong><br>`;
-            continue;
-          } else if (line.startsWith("**")) {
+          } else if (line.startsWith("<strong>")) {
             inSupplementSection = false;
           }
 
-          if (inSupplementSection && line.trim().startsWith("*")) {
-            const content = line.trim().substring(1).trim();
-            const supplementName = content
-              .split(":")[0]
-              .replace(/\*/g, "")
-              .trim();
-            html += `<li class="ml-6 list-disc flex items-center justify-between py-1">${content} 
-                                <button class="supplement-deep-dive-btn text-xs bg-primary/20 text-primary px-2 py-1 rounded hover:bg-primary/40 ml-2 whitespace-nowrap" data-supplement="${supplementName}">
-                                    Learn More ✨
-                                </button>
-                            </li>`;
-            continue;
-          }
+          if (line.trim().match(/^(\* |\d+\. )/)) {
+            if (!inList) {
+              finalHtml += "<ul>";
+              inList = true;
+            }
+            const content = line.trim().replace(/^(\* |\d+\. )/, "");
+            const supplementMatch = content.match(/^(.*?):/);
 
-          if (line.startsWith("### "))
-            html += `<h3 class="text-xl font-semibold text-white mt-4 mb-2">${line.substring(
-              4
-            )}</h3>`;
-          else if (line.startsWith("## "))
-            html += `<h2 class="text-2xl font-bold text-white mt-6 mb-3">${line.substring(
-              3
-            )}</h2>`;
-          else if (line.startsWith("**"))
-            html += `<strong>${line.replace(/\*\*/g, "")}</strong><br>`;
-          else if (line.trim().startsWith("*"))
-            html += `<li class="ml-6 list-disc">${line
-              .trim()
-              .substring(1)
-              .trim()}</li>`;
-          else if (line.trim()) html += `<p>${line}</p>`;
+            if (isMainPlan && inSupplementSection && supplementMatch) {
+              const supplementName = supplementMatch[1]
+                .replace(/<strong>/g, "")
+                .replace(/<\/strong>/g, "")
+                .trim();
+              finalHtml += `<li class="ml-6 list-disc flex items-center justify-between py-1">${content} 
+                                    <button class="supplement-deep-dive-btn text-xs bg-primary/20 text-primary px-2 py-1 rounded hover:bg-primary/40 ml-2 whitespace-nowrap" data-supplement="${supplementName}">
+                                        Learn More ✨
+                                    </button>
+                                </li>`;
+            } else {
+              finalHtml += `<li class="ml-6 list-disc">${content}</li>`;
+            }
+          } else {
+            if (inList) {
+              finalHtml += "</ul>";
+              inList = false;
+            }
+            finalHtml += line.replace(/\n/g, "<br>");
+          }
         }
-        return html;
+        if (inList) finalHtml += "</ul>";
+
+        return finalHtml.replace(/<br>/g, "");
       }
 
       /**
