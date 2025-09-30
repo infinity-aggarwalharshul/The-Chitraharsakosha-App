@@ -10,7 +10,7 @@
     />
     <meta
       name="keywords"
-      content="Longevity, Healthspan, Bio-hacking, AI Health, Personalized Medicine, Cellular Reprogramming, Genetic Analysis, The ChitraHarshaKosha"
+      content="Longevity, Healthspan, Bio-hacking, AI Health, Personalized Medicine, Cellular Reprogramming, Genetic Analysis, The ChitraHarshaKosha, Blockchain Health"
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -173,6 +173,11 @@
               >Services</a
             >
             <a
+              href="#security"
+              class="nav-link hover:text-primary transition-colors"
+              >Security</a
+            >
+            <a
               href="#ai-advisor"
               class="nav-link hover:text-primary transition-colors"
               >AI Advisor</a
@@ -202,6 +207,9 @@
           >
           <a href="#services" class="block py-2 px-4 text-sm hover:bg-secondary"
             >Services</a
+          >
+          <a href="#security" class="block py-2 px-4 text-sm hover:bg-secondary"
+            >Security</a
           >
           <a
             href="#ai-advisor"
@@ -313,8 +321,98 @@
           </div>
         </section>
 
+        <!-- Security Section -->
+        <section id="security" class="py-20 bg-dark-secondary/50">
+          <div class="container mx-auto px-6">
+            <div class="text-center">
+              <h2 class="text-3xl md:text-4xl font-bold text-white">
+                Our Security Promise
+              </h2>
+              <p class="mt-2 text-gray-400 max-w-2xl mx-auto">
+                Your privacy is paramount. We employ state-of-the-art technology
+                to protect your sensitive health data.
+              </p>
+            </div>
+            <div
+              class="mt-12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+            >
+              <div class="text-center md:text-left">
+                <div
+                  class="flex items-center justify-center md:justify-start gap-4"
+                >
+                  <i
+                    data-lucide="shield-check"
+                    class="w-10 h-10 text-accent"
+                  ></i>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">
+                      End-to-End Encryption
+                    </h3>
+                    <p class="text-gray-400 mt-1">
+                      Your data is encrypted at rest and in transit using
+                      industry-leading AES-256 encryption standards.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-center md:justify-start gap-4 mt-8"
+                >
+                  <i
+                    data-lucide="database-zap"
+                    class="w-10 h-10 text-accent"
+                  ></i>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">
+                      Google Cloud Infrastructure
+                    </h3>
+                    <p class="text-gray-400 mt-1">
+                      We leverage Google Cloud's secure, compliant, and
+                      resilient global infrastructure to house your data.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-center md:justify-start gap-4 mt-8"
+                >
+                  <i
+                    data-lucide="fingerprint"
+                    class="w-10 h-10 text-accent"
+                  ></i>
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">
+                      Passkey & Biometric Ready
+                    </h3>
+                    <p class="text-gray-400 mt-1">
+                      Our platform is built to support next-generation
+                      authentication methods for passwordless security.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-secondary rounded-lg p-8 border border-primary glowing-border text-center"
+              >
+                <i
+                  data-lucide="blocks"
+                  class="w-16 h-16 text-primary mx-auto"
+                ></i>
+                <h3 class="mt-4 text-2xl font-bold text-white">
+                  Blockchain-Verified Integrity
+                </h3>
+                <p class="mt-2 text-gray-400">
+                  We conceptually utilize a decentralized ledger to create an
+                  immutable, timestamped record of data access and updates. This
+                  ensures the integrity and verifiability of your health
+                  records, providing an unprecedented layer of trust and
+                  transparency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- AI Advisor Section -->
-        <section id="ai-advisor" class="py-20 bg-dark-secondary/50">
+        <section id="ai-advisor" class="py-20">
           <div class="container mx-auto px-6">
             <div
               id="app-content"
@@ -326,7 +424,7 @@
         </section>
 
         <!-- Pricing Section -->
-        <section id="pricing" class="py-20">
+        <section id="pricing" class="py-20 bg-dark-secondary/50">
           <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white">
               Choose Your Path to Longevity
@@ -495,7 +593,7 @@
         </section>
 
         <!-- Blogs Section -->
-        <section id="blogs" class="py-20 bg-dark-secondary/50">
+        <section id="blogs" class="py-20">
           <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white text-center">
               The Kosha Archives
@@ -654,7 +752,13 @@
           <div
             class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500"
           >
-            &copy; 2025 The ChitraHarshaKosha. Engineering a healthier future.
+            <div class="flex items-center justify-center gap-2">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+              <span>Blockchain Verified</span>
+            </div>
+            <div class="mt-2">
+              &copy; 2025 The ChitraHarshaKosha. Engineering a healthier future.
+            </div>
           </div>
         </div>
       </footer>
